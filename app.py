@@ -15,6 +15,7 @@ app.include_router(person)
 app.include_router(rol)
 app.include_router(userrol)
 
+# Para desplegar el proyecto en render 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 8000))
     uvicorn.run(app, host="0.0.0.0", port=port)
