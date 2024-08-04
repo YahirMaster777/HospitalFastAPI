@@ -24,6 +24,6 @@ class PersonUpdate(PersonBase):
 class Person(PersonBase):
     ID: int
     class Config:
-        from_attributes = True
+        orm_mode = True
 
 

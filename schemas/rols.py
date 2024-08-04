@@ -18,6 +18,6 @@ class RolUpdate(RolBase):
 class Rol(RolBase):
     ID: int
     class Config:
-        from_attributes = True
+        orm_mode = True
 
 

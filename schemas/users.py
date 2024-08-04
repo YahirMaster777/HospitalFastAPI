@@ -22,7 +22,7 @@ class User(UserBase):
     ID: int
     Persona_ID: int
     class Config:
-        from_attributes = True
+        orm_mode = True
         
 class UserLogin(BaseModel):
     Nombre_Usuario: Optional[str] = None
