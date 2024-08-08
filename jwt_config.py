@@ -1,4 +1,4 @@
-from jwt.api_jwt import encode, decode
+from jwt import encode, decode
 
 
 def solicita_token (dato:dict)->str:
