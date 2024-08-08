@@ -5,6 +5,9 @@ from routes.user import user
 from routes.person import person
 from routes.rol import rol
 from routes.userrol import userrol
+from routes.nacimientos import baby
+from routes.viewCiudad import view1
+from routes.viewGenero import view2
 from fastapi.middleware.cors import CORSMiddleware
 
 app=FastAPI(
@@ -25,10 +28,13 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-app.include_router(user)
-app.include_router(person)
-app.include_router(rol)
-app.include_router(userrol)
+app.include_router(user, prefix="/api")
+app.include_router(person, prefix="/api")
+app.include_router(rol, prefix="/api")
+app.include_router(userrol, prefix="/api")
+app.include_router(baby, prefix="/api")
+app.include_router(view1, prefix="/api")
+app.include_router(view2, prefix="/api")
 
 # Para desplegar el proyecto en render 
 if __name__ == "__main__":
