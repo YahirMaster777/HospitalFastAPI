@@ -6,4 +6,4 @@ class NacimientosPorCiudad(BaseModel):
     cantidad_nacimientos: int
 
     class Config:
-        orm_mode = True
+        from_attributes = True
