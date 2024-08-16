@@ -8,6 +8,7 @@ from routes.userrol import userrol
 from routes.nacimientos import baby
 from routes.viewCiudad import view1
 from routes.viewGenero import view2
+from routes.vacunas import vacuna
 from fastapi.middleware.cors import CORSMiddleware
 
 app=FastAPI(
@@ -35,7 +36,7 @@ app.include_router(userrol, prefix="/api")
 app.include_router(baby, prefix="/api")
 app.include_router(view1, prefix="/api")
 app.include_router(view2, prefix="/api")
-
+app.include_router(vacuna, prefix="/api")
 # Para desplegar el proyecto en render 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 8000))

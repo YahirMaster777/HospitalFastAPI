@@ -3,7 +3,7 @@ from config.db import Base
 from sqlalchemy.dialects.mysql import LONGTEXT
 
 class Baby(Base):
-    __tablename__ = "babys_born"
+    __tablename__ = "tbb_nacimientos"
     
     id = Column(Integer, primary_key=True, index=True)
     fecha_nacimiento = Column(Date, nullable=False)
