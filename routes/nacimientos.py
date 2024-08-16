@@ -53,7 +53,7 @@ def update_nacimiento(id: int, baby_update: schemas.nacimientos.BabyUpdate, db: 
 
 
 
-@baby.delete("/nacimiento/{id}", response_model=schemas.nacimientos.Baby, tags=["Nacimientos"])
+@baby.delete("/nacimientodelete/{id}", response_model=schemas.nacimientos.Baby, tags=["Nacimientos"])
 def delete_nacimiento(id: int, db: Session = Depends(get_db)):
     db_nacimiento = crud.nacimientos.delete_nacimiento(db=db, id=id)
     if db_nacimiento is None:
