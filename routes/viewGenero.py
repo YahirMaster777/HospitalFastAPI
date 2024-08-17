@@ -16,7 +16,7 @@ def get_db():
     finally:
         db.close()
 
-@view2.get("/nacimientogenero/", response_model=List[schemas.viewGenero.TiposDeNacimiento])
+@view2.get("/nacimientogenero/", response_model=List[schemas.viewGenero.TiposDeNacimiento], tags=["Pediatria"])
 def read_tipo_nacimiento(skip: int = 0, limit: int = 10, db: Session = Depends(get_db)):
     nacimientos = crud.viewGenero.get_tipo_nacimientos(db, skip=skip, limit=limit)
     return nacimientos

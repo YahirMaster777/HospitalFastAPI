@@ -16,7 +16,7 @@ def get_db():
     finally:
         db.close()
 
-@view1.get("/nciudad/", response_model=List[schemas.viewCiudad.NacimientosPorCiudad])
+@view1.get("/nciudad/", response_model=List[schemas.viewCiudad.NacimientosPorCiudad], tags=["Pediatria"])
 def read_nacimientos_por_ciudad(skip: int = 0, limit: int = 10, db: Session = Depends(get_db)):
     nacimientos = crud.viewCiudad.get_nacimientos_por_ciudad(db, skip=skip, limit=limit)
     return nacimientos

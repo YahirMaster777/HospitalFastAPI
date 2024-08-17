@@ -1,18 +1,16 @@
-from sqlalchemy import Column, Integer, String, Boolean, DateTime, ForeignKey, Enum
+from sqlalchemy import Column, Integer, String, Float, ForeignKey, Date
 from sqlalchemy.dialects.mysql import LONGTEXT
 from sqlalchemy.orm import relationship
 from config.db import Base
-import models.persons
-import enum
 
 class Vacunas(Base):
     __tablename__ = "tbd_vacunas"
 
-    ID = Column(Integer, primary_key=True, index=True)
-    nacimientos_id = Column(Integer, ForeignKey("tbb_nacimientos.id"))
-    vacuna_administrada = Column(String(50))
-    numero_lote = (Integer)
-    fecha_admistracion = Column(DateTime)
-    # Clave foránea para la relación uno a uno con User
-    
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    nacimientos_id = Column(Integer, ForeignKey("tbb_nacimientos.id"), index=True)
+    vacuna_administrada = Column(String(50), nullable=False)
+    dosis = Column(Float, nullable=False)
+    via_administracion = Column(String(50), nullable=False)
+    numero_lote = Column(Integer, nullable=False)
+    fecha_administracion = Column(Date, nullable=False)
 
