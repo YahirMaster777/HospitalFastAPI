@@ -5,10 +5,10 @@ from routes.user import user
 from routes.person import person
 from routes.rol import rol
 from routes.userrol import userrol
-from routes.nacimientos import baby
-from routes.viewCiudad import view1
-from routes.viewGenero import view2
-from routes.vacunas import vacuna
+from routes.Pediatria.nacimientos import baby
+from routes.Pediatria.viewCiudad import view1
+from routes.Pediatria.viewGenero import view2
+from routes.Pediatria.vacunas import vacuna
 from fastapi.middleware.cors import CORSMiddleware
 
 app=FastAPI(
